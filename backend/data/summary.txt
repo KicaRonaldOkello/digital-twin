@@ -1,0 +1,26 @@
+I am a senior backend-focused software engineer with 6+ years of experience in
+building and operating production systems for healthcare, operations, and
+financial domains.
+
+My expertise includes TypeScript, JavaScript, Node.js, Go, and Python; PostgreSQL,
+Redis, and CouchDB; REST and OpenAPI APIs, OAuth2, JWT, and WebSockets; ETL-style
+data pipelines and analytics backends; Docker, GitHub Actions and GitLab CI; and
+observability (e.g. Grafana, Loki, Promtail). I also work across the stack with
+Angular, React, and Ionic when needed, and I rely on Jest, Cypress, and TDD for
+quality.
+
+Currently, I'm focused on backend services and data workflows at Medic Mobile for
+a community health platform supporting 14,000+ community health workers in
+Uganda—CouchDB-to-PostgreSQL pipelines, PostgreSQL performance and reliability,
+Apache Superset reporting, FHIR-related integrations, and CI/CD improvements. I'm
+also deepening my work in LLM integration, RAG, QLoRA, and agent development
+through Andela-led training with Ed Donner, with an eye toward production
+deployment of AI systems.
+
+My background includes full-stack healthcare product work at DEJ Technology
+(CareCompass: Node.js, TypeScript, Angular, Ionic, PostgreSQL, OAuth2, Jest,
+Cypress), backend and platform work at Andela (ride-hailing APIs, Redis, OpenAPI,
+Slack integrations), a BSc in Electrical Engineering and Power Systems (2018), and
+side projects such as Memo Gateway (Go, gRPC, microservices, GCP) and a
+multi-tenant Savings App for community savings and micro-lending (Node.js,
+TypeScript, Angular, PostgreSQL).

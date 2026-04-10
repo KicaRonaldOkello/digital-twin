@@ -1,0 +1,55 @@
+{
+  "full_name": "Kica Ronald Okello",
+  "name": "Kica",
+  "current_role": "Senior Software Developer at Medic Mobile (Remote)",
+  "location": "Kampala, Uganda",
+  "email": "okello.ronald045@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/kica-ronald-okello-41abb4114/",
+  "github": "https://github.com/KicaRonaldOkello",
+  "specialties": [
+    "Backend and platform engineering (TypeScript, JavaScript, Node.js, Go, Python)",
+    "PostgreSQL, Redis, CouchDB; ETL-style pipelines and analytics backends",
+    "REST/OpenAPI, OAuth2, JWT, WebSockets, gRPC (project work)",
+    "CI/CD (GitHub Actions, GitLab CI), Docker, observability (Grafana, Loki, Promtail)",
+    "Healthcare and community health systems at scale (14,000+ CHWs in Uganda)",
+    "LLM integration, RAG, QLoRA, and agent development (ongoing training)"
+  ],
+  "years_experience": 6,
+  "education": [
+    {
+      "degree": "BSc. Electrical Engineering and Power Systems",
+      "institution": "",
+      "year": "2018"
+    }
+  ],
+  "current_employer": "Medic Mobile",
+  "employment_start": "2022-11",
+  "notable_metrics": {
+    "community_health_workers_supported": "14000+",
+    "ci_build_time_reduction_minutes": "30 to ~12"
+  },
+  "side_projects": [
+    {
+      "name": "Memo Gateway",
+      "url": "https://memo-gateway-5dd08e.gitlab.io"
+    },
+    {
+      "name": "Savings App",
+      "url": "https://staging.savingsgroup.site/"
+    }
+  ],
+  "ai_training": {
+    "organizer": "Andela",
+    "lead": "Ed Donner",
+    "also_known_as": "AI Engineering Bootcamp, Andela × Ed Donner",
+    "status": "Ongoing",
+    "topics": [
+      "LLM integration",
+      "RAG",
+      "QLoRA fine-tuning",
+      "Agent development",
+      "Production deployment of LLM and agent systems"
+    ]
+  },
+  "profile_as_of": "2026-04"
+}
