@@ -16,10 +16,28 @@ variable "environment" {
   }
 }
 
-variable "bedrock_model_id" {
-  description = "Bedrock model ID"
+variable "openrouter_api_key" {
+  description = "OpenRouter API key for the Lambda backend. Prefer TF_VAR_openrouter_api_key or GitHub secret OPENROUTER_API_KEY in CI."
   type        = string
-  default     = "amazon.nova-micro-v1:0"
+  sensitive   = true
+}
+
+variable "openrouter_model" {
+  description = "OpenRouter model id (see https://openrouter.ai/models)"
+  type        = string
+  default     = "openai/gpt-4o-mini"
+}
+
+variable "openrouter_http_referer" {
+  description = "Optional site URL sent as HTTP-Referer for OpenRouter rankings"
+  type        = string
+  default     = ""
+}
+
+variable "openrouter_app_title" {
+  description = "Optional app name sent as X-Title for OpenRouter rankings"
+  type        = string
+  default     = ""
 }
 
 variable "lambda_timeout" {

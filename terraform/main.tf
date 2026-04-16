@@ -109,11 +109,6 @@ resource "aws_iam_role_policy_attachment" "lambda_basic" {
   role       = aws_iam_role.lambda_role.name
 }
 
-resource "aws_iam_role_policy_attachment" "lambda_bedrock" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonBedrockFullAccess"
-  role       = aws_iam_role.lambda_role.name
-}
-
 resource "aws_iam_role_policy_attachment" "lambda_s3" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
   role       = aws_iam_role.lambda_role.name
@@ -132,12 +127,17 @@ resource "aws_lambda_function" "api" {
   tags             = local.common_tags
 
   environment {
-    variables = {
-      CORS_ORIGINS     = var.use_custom_domain ? "https://${var.root_domain},https://www.${var.root_domain}" : "https://${aws_cloudfront_distribution.main.domain_name}"
-      S3_BUCKET        = aws_s3_bucket.memory.id
-      USE_S3           = "true"
-      BEDROCK_MODEL_ID = var.bedrock_model_id
-    }
+    variables = merge(
+      {
+        CORS_ORIGINS       = var.use_custom_domain ? "https://${var.root_domain},https://www.${var.root_domain}" : "https://${aws_cloudfront_distribution.main.domain_name}"
+        S3_BUCKET          = aws_s3_bucket.memory.id
+        USE_S3             = "true"
+        OPENROUTER_API_KEY = var.openrouter_api_key
+        OPENROUTER_MODEL   = var.openrouter_model
+      },
+      var.openrouter_http_referer != "" ? { OPENROUTER_HTTP_REFERER = var.openrouter_http_referer } : {},
+      var.openrouter_app_title != "" ? { OPENROUTER_APP_TITLE = var.openrouter_app_title } : {},
+    )
   }
 
   # Ensure Lambda waits for the distribution to exist
@@ -208,7 +208,7 @@ resource "aws_lambda_permission" "api_gw" {
 # CloudFront distribution
 resource "aws_cloudfront_distribution" "main" {
   aliases = local.aliases
-  
+
   viewer_certificate {
     acm_certificate_arn            = var.use_custom_domain ? aws_acm_certificate.site[0].arn : null
     cloudfront_default_certificate = var.use_custom_domain ? false : true
